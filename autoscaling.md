@@ -57,4 +57,4 @@ Automation for everyone
 Use Infrastructure as Code to provision and manage any cloud, infrastructure, or service
 
 #### 3.3.2 Pipeline
-![Pipeline Example](assets\images\high-level-pipeline.png)
+![Pipeline Example](assets/images/high-level-pipeline.png)
