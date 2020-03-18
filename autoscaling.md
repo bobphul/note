@@ -17,9 +17,9 @@
 
 ## 3.1 AutoScale
 
-AutoScale의 경우 Scale Out을 통한 서버 대수를 늘려 처리 능력을 향상
-AWS : EC2 Auto Scaling
-Azure : Virtual Machine Scale Sets
+AutoScale의 경우 Scale Out을 통한 서버 대수를 늘려 처리 능력을 향상  
+> AWS : EC2 Auto Scaling  
+> Azure : Virtual Machine Scale Sets
 
 ### 3.1.1 구성요소
 
