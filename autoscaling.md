@@ -64,8 +64,8 @@ Automation for everyone
 Use Infrastructure as Code to provision and manage any cloud, infrastructure, or service
 
 ### 3.3.2 Pipeline
-![Pipeline Example](assets/images/pipeline.png)
+![Pipeline Example](assets/images/pipeline.png)  
 [출처] https://read.acloud.guru/immutable-ami-with-packer-a71694529d60
 
-![Pipeline Example2](assets/images/pipeline2.png)
+![Pipeline Example2](assets/images/pipeline2.png)  
 [출처] https://blog.gofynd.com/how-we-rebuilt-fynds-infrastructure-3238ec757281
