@@ -3,15 +3,19 @@
 > **Autoscale** 가능한 아키텍쳐
 
 # 2. 환경
-기본 환경은 AWS를 이용하고, 다른 클라우드(Azure, Oracle..)에서도 적용 가능한지 고려
+기본 환경은 AWS를 이용하고, 관련 있는 주요 서비스들은 다음 표와 같다.
 
 | Item | Description |
 | ------ | ------ |
 | VPC | virtual network environment |
-| EC2 | Compute instance |
+| EC2 | Compute instance(server) |
 | AMI | Machine Image |
 | Security Group | Network In/Outbound rule |
-| ELB | Load Balancer (aka. L4) |
+| ELB | Load Balancer|
+
+## 2.1 샘플 구조
+![sample](assets/images/aws-env.jpg)  
+[출처] https://bit.ly/2UwnZcD
 
 # 3. 설명
 
@@ -26,6 +30,10 @@ AutoScale의 경우 Scale Out을 통한 서버 대수를 늘려 처리 능력을
 1. Groups : 인스턴스 수 지정
 2. Configuration templates : AMI, 인스턴스 타입, 키페어, 보안그룹 등
 3. Scaling options : 동작 조건 설정
+
+### 3.1.2 동작
+![autoscaling Example](assets/images/autoscaling-group.png)  
+[출처] https://craig.goddenpayne.co.uk/task-autoscaling-fargate/
 
 ## 3.2 AMI
 
@@ -56,5 +64,8 @@ Automation for everyone
 Use Infrastructure as Code to provision and manage any cloud, infrastructure, or service
 
 ### 3.3.2 Pipeline
-![Pipeline Example](assets/images/high-level-pipeline.png)
+![Pipeline Example](assets/images/pipeline.png)
+[출처] https://read.acloud.guru/immutable-ami-with-packer-a71694529d60
 
+![Pipeline Example2](assets/images/pipeline2.png)
+[출처] https://blog.gofynd.com/how-we-rebuilt-fynds-infrastructure-3238ec757281
