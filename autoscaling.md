@@ -59,11 +59,15 @@ Build Automated Machine Images
 #### 3.3.1.2 [Ansible](https://www.ansible.com/)
 **Configuration Management**  
 Title Bar : Ansible is Simple IT Automation  
-Automation for everyone
+Automation for everyone  
+
+Packer에서도 물론 shell script를 통해서 구성 관리가 가능하나, script 대비 ansible에서는 파일관리, 패키지설치, 시스템관리에 대한 모듈 지원  
+
 
 #### 3.3.1.3 [terraform](https://www.terraform.io/)
 **Infarstructure Provisioning**  
-Use Infrastructure as Code to provision and manage any cloud, infrastructure, or service
+Use Infrastructure as Code to provision and manage any cloud, infrastructure, or service  
+계획을 통해 클라우드에 배포(실제적용)전 리소스의 변경되는 내용을 사전 확인 가능
 
 ### 3.3.2 Pipeline
 ![Pipeline Example](assets/images/pipeline.png)  
