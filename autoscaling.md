@@ -57,10 +57,12 @@ Build Automated Machine Images
 3. Template : Builder + Provisioner 설정 파일 (output:json)
 
 #### 3.3.1.2 [Ansible](https://www.ansible.com/)
-Title Bar : Ansible is Simple IT Automation
+**Configuration Management**  
+Title Bar : Ansible is Simple IT Automation  
 Automation for everyone
 
 #### 3.3.1.3 [terraform](https://www.terraform.io/)
+**Infarstructure Provisioning**  
 Use Infrastructure as Code to provision and manage any cloud, infrastructure, or service
 
 ### 3.3.2 Pipeline
