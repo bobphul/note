@@ -36,17 +36,17 @@ AutoScale의 경우 Scale Out을 통한 서버 대수를 늘려 처리 능력을
 [출처] https://craig.goddenpayne.co.uk/task-autoscaling-fargate/
 
 ## 3.2 AMI
+AMI(Amazon Machine Image)는 EC2를 처음 구성할때 지정하는 소프트웨어가 구성된 일종의 템플릿  
 
 AMI 종류
 1. AWS 기본 이미지
 2. AWS Marketplace 이미지
 3. **Custom 이미지**
 
-AMI(Amazon Machine Image)는 EC2를 처음 구성할때 지정하는 소프트웨어가 구성된 일종의 템플릿
 
 ## 3.3 프로비저닝(Provisioning)
 
-사용자의 요구에 맞게 서버를 설정해 두었다가 필요 시 서버를 즉시 사용할 수 있는 상태로 미리 준비해 두는 것 (feat. wikipedia)
+사용자의 요구에 맞게 서버를 설정해 두었다가 필요 시 서버를 즉시 사용할 수 있는 상태로 미리 준비해 두는 것 (feat. wikipedia)  
 ex) JDK나 MySQL을 미리 설치하거나 설정
 
 ### 3.3.1 도구
@@ -67,6 +67,7 @@ Packer에서도 물론 shell script를 통해서 구성 관리가 가능하나, 
 #### 3.3.1.3 [terraform](https://www.terraform.io/)
 **Infarstructure Provisioning**  
 Use Infrastructure as Code to provision and manage any cloud, infrastructure, or service  
+
 계획을 통해 클라우드에 배포(실제적용)전 리소스의 변경되는 내용을 사전 확인 가능
 
 ### 3.3.2 Pipeline
