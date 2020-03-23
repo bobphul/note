@@ -170,6 +170,12 @@ DATABASE IS READY TO USE!
 ...생략...
 ```
 
+## shell 접속
+```
+docker exec -ti oracle18c bash
+[oracle@55087facf7b7 ~]$
+```
+
 ## sqlplus connection test
 ### install sqlplus
 sql connection 테스트를 위해서 client basic package와 sqlplus package(option)를 설치해보자.  
@@ -259,3 +265,81 @@ SQL> exit
 Disconnected from Oracle Database 18c Standard Edition 2 Release 18.0.0.0.0 - Production
 Version 18.3.0.0.0
 ```
+
+***
+
+# Mysql Container 구성
+docker hub 공식 [mysql](https://hub.docker.com/_/mysql)
+
+> Dockerfile  
+> [5.6.47,  5.6](https://github.com/docker-library/mysql/blob/d284e15821ac64b6eda1b146775bf4b6f4844077/5.6/Dockerfile)  
+> [5.7.29,  5.7,  5](https://github.com/docker-library/mysql/blob/d284e15821ac64b6eda1b146775bf4b6f4844077/5.7/Dockerfile)  
+> [8.0.19,  8.0,  8,  latest](https://github.com/docker-library/mysql/blob/d284e15821ac64b6eda1b146775bf4b6f4844077/8.0/Dockerfile)
+
+## docker images
+docker hub에서 별도 제약 없이 다운 받거나, 직접 Dockerfile로 이미지를 생성하면 된다.
+```
+latest 버전 다운
+docker pull mysql
+
+특정 버전 다운(5.7.28)
+docker pull mysql:5.7.28
+```
+버전에 대한 확인은 [여기](https://hub.docker.com/_/mysql?tab=tags)를 참고한다.
+
+## docker volume
+mysql database container를 위한 volume을 하나 생성해본다.
+이 volume은 컨테이너 기동시 데이터 용도로 사용할 예정이고, 기동시 경로를 지정할수 있다.  
+```
+docker volume create mysql8
+
+docker volume ls
+DRIVER              VOLUME NAME
+local               mysql8
+local               oracle18c
+```
+
+## docker run
+Mysql관련 다양한 Environment variable들이 있으나, 일부는 docker에서 사용 불가능 한 변수(MYSQL_HOST 같이)가 있다.  
+버전에 맞는 변수들은 (여기)[https://dev.mysql.com/doc/refman/5.7/en/environment-variables.html]를 참고한다.
+특히 MYSQL_ROOT_PASSWORD는 반드시 필요한 변수이다.
+```cmd
+docker run --name mysql8 -v mysql8:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=qwer123$ -p 3306:3306 -p 33060:33060 -d mysql
+```
+
+## shell 접속
+```
+docker exec -ti mysql8 bash
+root@7d00c82d7c2b:/#
+```
+
+## 접속 확인
+### non-install mysql client 
+```
+docker exec -ti mysql8 mysql -uroot
+ -pqwer123$
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.19 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> select @@version;
++-----------+
+| @@version |
++-----------+
+| 8.0.19    |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> exit
+Bye
+```
+
