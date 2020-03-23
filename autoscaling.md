@@ -70,9 +70,21 @@ Use Infrastructure as Code to provision and manage any cloud, infrastructure, or
 
 계획을 통해 클라우드에 배포(실제적용)전 리소스의 변경되는 내용을 사전 확인 가능
 
-### 3.3.2 Pipeline
+### 3.3.2 Pipeline  
+Stamp Pattern  
 ![Pipeline Example](assets/images/pipeline.png)  
 [출처] https://read.acloud.guru/immutable-ami-with-packer-a71694529d60
 
 ![Pipeline Example2](assets/images/pipeline2.png)  
 [출처] https://blog.gofynd.com/how-we-rebuilt-fynds-infrastructure-3238ec757281
+
+
+### 3.4 추가사항
+Blue/Green 배포 활용  
+Scale Out Pattern  
+![bluegreen](assets/images/bluegreen.gif)  
+[출처] https://datacenterrookie.wordpress.com/2017/05/10/bluegreen-deployment-on-aws/
+
+Weight Transition Pattern  
+![route53_weight](assets/images/route53_weight.jpg)  
+[출처] https://aws.amazon.com/blogs/startups/upgrades-without-tears-part-2-bluegreen-deployment-step-by-step-on-aws/
