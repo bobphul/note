@@ -266,6 +266,22 @@ Disconnected from Oracle Database 18c Standard Edition 2 Release 18.0.0.0.0 - Pr
 Version 18.3.0.0.0
 ```
 
+## docker 중지
+```
+docker stop oracle18c
+```
+
+## docker 시작
+```
+docker start oracle18c
+```
+
+## docker 삭제
+삭제는 docker가 중지 된 상태에서만 가능하다
+```
+docker rm oracle18c
+```
+
 ***
 
 # Mysql Container 구성
@@ -343,3 +359,18 @@ mysql> exit
 Bye
 ```
 
+## docker 중지
+```
+docker stop mysql8
+```
+
+## docker 시작
+```
+docker start mysql8
+```
+
+## docker 삭제
+삭제는 docker가 중지 된 상태에서만 가능하다
+```
+docker rm mysql8
+```
