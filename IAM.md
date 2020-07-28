@@ -1,5 +1,5 @@
 # 인증?? 인가??
-![auth](images\security-authentication-user-authorization-websites.png)
+![auth](images/security-authentication-user-authorization-websites.png)
 
 # IAM
 AWS Identity and Access Management(IAM)는 AWS 리소스에 대한 액세스를 안전하게 제어할 수 있는 웹 서비스  
@@ -57,7 +57,7 @@ AWS에서는 다양한 프로그래밍 언어 및 플랫폼(Java, Python, Ruby, 
 서비스로 직접 HTTPS 요청을 실행할 수 있는 IAM HTTPS API를 사용하여 프로그래밍 방식으로 IAM 및 AWS에 액세스할 수 있습니다.
 
 ## 작동방식
-![diagram](images\intro-diagram_policies_800.png)
+![diagram](images/intro-diagram_policies_800.png)
 
 ~~### 용어~~  
 ~~- 리소스  
@@ -113,10 +113,10 @@ Amazon Elastic Compute Cloud(Amazon EC2) 인스턴스에서 실행되는 애플�
 3. 조직 SCP, IAM 권한 경계 또는 세션 정책이 있는 경우 허용이 재정의 함
 4. 어떠한 정책의 명시적 거부는 허용을 무시함
 
-![policy-process](images\PolicyEvaluationHorizontal.png)
+![policy-process](images/PolicyEvaluationHorizontal.png)
 
 #### 정책 예제
-![sample-policy](images\Types_of_Permissions.diagram.png)  
+![sample-policy](images/Types_of_Permissions.diagram.png)  
 
 JohnSmith – John은 Resource X에서 나열 및 읽기 작업을 수행할 수 있습니다. John은 사용자에 대한 자격 증명 기반 정책과 Resource X에 대한 리소스 기반 정책을 통해 이 권한을 부여 받습니다.
 
@@ -171,10 +171,10 @@ IAM 사용자는 별개의 계정이 아니라 해당 계정 내의 사용자임
 
 위 예제와 같이 명시적으로 허용되지 않은 작업 또는 리소스는 기본적으로 모두 거부하게 된다. (묵시적거부)  
 IAM 콘솔에는 정책에서 각 서비스에 대해 허용되거나 거부되는 액세스 레벨, 리소스, 조건을 설명하는 정책 요약 테이블이 포함되어 있습니다. 
-![policy-summary](images\policies-summary-dynamodbexample.png)
+![policy-summary](images/policies-summary-dynamodbexample.png)
 
 정책은 3가지 테이블, 즉 정책 요약, 서비스 요약, 작업 요약으로 요약된다. 
-![policy-summary-diagram](images\policy_summaries-diagram.png)
+![policy-summary-diagram](images/policy_summaries-diagram.png)
 
 정책 요약은 하나 이상의 Uncategorized services(미분류 서비스), 명시적 거부, 허용 섹션으로 그룹화됨.  
 미분류 서비스는 IAM에서 인식하지 못하는 서비스인 경우.  
@@ -351,20 +351,20 @@ https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/reference_policies_elemen
         AWS 관리형 정책 : 
         AWS에서 생성 및 관리하는 관리형 정책. 
         정책 사용이 처음이라면 AWS 관리형 정책 사용을 먼저 권장
-![aws-managed](images\policies-aws-managed-policies.diagram.png)
+![aws-managed](images/policies-aws-managed-policies.diagram.png)
 
         고객 관리형 정책 : 
         사용자가 자신의 AWS 계정에서 생성 및 관리하는 관리형 정책  
         고객 관리형 정책은 AWS 관리형 정책보다 정책에 대해 더욱 정밀하게 제어   
         시각적 편집기에서 또는 JSON 정책 문서를 직접 생성하여 IAM 정책을 생성 및 편집 가능  
 
-![custom-policy](images\policies-customer-managed-policies.diagram.png)
+![custom-policy](images/policies-customer-managed-policies.diagram.png)
 
     인라인 정책 :  
     자신이 생성 및 관리하며, 단일 사용자, 그룹 또는 역할에 직접 포함되는 정책  
     대부분의 경우 인라인 정책을 사용하지 않는 것 권장
 
-![inline-policy](images\policies-inline-policies.diagram.png)
+![inline-policy](images/policies-inline-policies.diagram.png)
 
     인라인보다 관리형 권장 이유
     1. 재사용성
@@ -394,7 +394,7 @@ IAM 사용자를 생성할 경우, 권한을 부여하지 않는 한 사용자�
 IAM 사용자를 IAM 그룹으로 구성하고 그룹에 정책을 연결할 수 있다.  
 각 사용자는 별도의 자격 증명을 갖고 있을수도 있지만, 그룹에 연결된 정책에 명시된 권한이 그룹 내 모든 사용자에게 부여되게 된다.   
 
-![iam-diagram](images\iam-intro-users-and-groups.diagram.png)
+![iam-diagram](images/iam-intro-users-and-groups.diagram.png)
 
 
 ### 정책 예제
@@ -405,7 +405,7 @@ IAM 사용자를 IAM 그룹으로 구성하고 그룹에 정책을 연결할 수
 속성을 기반으로 권한을 정의하는 권한 부여 전략이며, AWS에서는 이러한 속성을 태그라고 함  
 ABAC 정책은 보안 주체의 태그가 리소스 태그와 일치할 때 작업을 허용하도록 설계될 수 있다.  
 
-![abac](images\tutorial-abac-concept.png)
+![abac](images/tutorial-abac-concept.png)
 
 [reference] https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html
 
@@ -415,7 +415,7 @@ IAM에서는 다양한 직무에 대해 서로 다른 정책을 생성하여 RBA
 가장 좋은 방법은 직무에 필요한 최소 권한을 부여하는 것.  
 직원이 새 리소스를 추가할 때 해당 리소스에 액세스할 수 있도록 정책을 업데이트해야 한다.
 
-![rbac](images\tutorial-abac-rbac-concept.png)
+![rbac](images/tutorial-abac-rbac-concept.png)
 
 RBAC 모델에 비해 ABAC의 이점
 
