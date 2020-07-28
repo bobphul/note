@@ -317,7 +317,7 @@ local               oracle18c
 
 ## docker run
 Mysql관련 다양한 Environment variable들이 있으나, 일부는 docker에서 사용 불가능 한 변수(MYSQL_HOST 같이)가 있다.  
-버전에 맞는 변수들은 (여기)[https://dev.mysql.com/doc/refman/5.7/en/environment-variables.html]를 참고한다.
+버전에 맞는 변수들은 [여기](https://dev.mysql.com/doc/refman/5.7/en/environment-variables.html)를 참고한다.
 특히 MYSQL_ROOT_PASSWORD는 반드시 필요한 변수이다.
 ```cmd
 docker run --name mysql8 -v mysql8:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=qwer123$ -p 3306:3306 -p 33060:33060 -d mysql
@@ -332,8 +332,7 @@ root@7d00c82d7c2b:/#
 ## 접속 확인
 ### non-install mysql client 
 ```
-docker exec -ti mysql8 mysql -uroot
- -pqwer123$
+docker exec -ti mysql8 mysql -uroot -pqwer123$
 mysql: [Warning] Using a password on the command line interface can be insecure.
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 10
