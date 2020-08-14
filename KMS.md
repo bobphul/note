@@ -72,11 +72,11 @@ AWS KMS는 지정된 CMK를 이용해서 데이터키를 만든다.
 
 데이터 키 생성 예제  
 ```
-    aws kms generate-data-key --key-id arn:aws:kms:ap-northeast-2:303767777435:key/aa10bffa-5004-4398-b040-a43cb34c9388 --key-spec AES_256
+    aws kms generate-data-key --key-id arn:aws:kms:ap-northeast-2:3XXXXXXXXXXX:key/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx --key-spec AES_256
 
     {
         "Plaintext": "VjqR8leA8vEnkDRNiemYDMDS+aUoUwqaxTZ2JzDICxc=",
-        "KeyId": "arn:aws:kms:ap-northeast-2:303767777435:key/aa10bffa-5004-4398-b040-a43cb34c9388",
+        "KeyId": "arn:aws:kms:ap-northeast-2:3XXXXXXXXXXX:key/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
         "CiphertextBlob": "AQIDAHjVppF9a/AvJ4lvj/Hb98qP0MO4PMcKQwF759Ku50AXBwH7TtHXqVbZmYArB2NzREncAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMnjrnqQkOhW+8AxbxAgEQgDvqdYurtxALI1/vR32Ae4EN4gHImVLNc87eUhr1SKGMZF9JzRmLxrvU3gIglQdkxApkG3wxu6q+H/BsFA=="
     }  
 ```
@@ -88,7 +88,7 @@ AWS KMS는 지정된 CMK를 이용해서 데이터키를 만든다.
 
 환경변수  
 ```
-KEY_ID=fc99d67b-620a-4472-8ecd-b97895966776     # CMK ID
+KEY_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx     # CMK ID
 SECRET_TEXT="cyberlogitec secret text"          # 암/복호화 테스트에 사용할 텍스트
 ENCRYPTED_SECRET_AS_BLOB=encrypted_secret_blob  # 암호화파일 이름
 DECRYPTED_SECRET_AS_BLOB=decrypted_secret_blob  # 복호화파일 이름

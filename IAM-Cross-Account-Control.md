@@ -6,7 +6,7 @@ IAM Cross Account 테스트 용도로 구성
 일반적으로 계정 내 또는 계정 간 액세스에 사용하게 된다.
 
 # Environment
-- TRA Test 계정(`588298587343`)과 개인 Test 계정(`303767777435`)
+- TRA Test 계정(`5XXXXXXXXXX`)과 개인 Test 계정(`3XXXXXXXXXX`)
 - TRA Test 계정 <u>IAM 사용자</u>로 개인 계정 <u>IAM 사용자 없이</u> 콘솔에 로그인하여 사용 할 수 있다.
 - **모든 리소스**를 생성하고 삭제까지 가능하도록 **모든 권한**을 부여한다.
 
@@ -44,7 +44,7 @@ name : my-test-role
     {
       "Effect": "Allow",
       "Principal": {
-        "AWS": "arn:aws:iam::588298587343:user/bobphul"
+        "AWS": "arn:aws:iam::5XXXXXXXXXX:user/bobphul"
       },
       "Action": "sts:AssumeRole",
       "Condition": {}
@@ -53,7 +53,7 @@ name : my-test-role
 }
 ```
 Copy Role ARN & console link  
-`arn:aws:iam::303767777435:role/my-test-role`  
+`arn:aws:iam::3XXXXXXXXXX:role/my-test-role`  
 https://signin.aws.amazon.com/switchrole?roleName=my-test-role&account=2012504
 
 ## ~~TRA계정~~
@@ -67,7 +67,7 @@ name : assume-role-policy
     "Statement": {
         "Effect": "Allow",
         "Action": "sts:AssumeRole",
-        "Resource": "arn:aws:iam::303767777435:role/my-test-role"
+        "Resource": "arn:aws:iam::3XXXXXXXXXX:role/my-test-role"
     }
 }
 ```
@@ -85,7 +85,7 @@ C:\Users\<사용자>\.aws\credentials
 ```
 STS(Security Token Service)통한 Assume role 접근
 ```
-aws sts assume-role --role-arn "arn:aws:iam::303767777435:role/my-test-role" --role-session-name "MyTestSession01"
+aws sts assume-role --role-arn "arn:aws:iam::3XXXXXXXXXX:role/my-test-role" --role-session-name "MyTestSession01"
 ```
 
 AWS CLI 요청자 변경 확인
@@ -125,7 +125,7 @@ AWS CLI config 파일 추가
 [profile iamtest]
 region = ap-northeast-2
 source_profile = tratest
-role_arn = arn:aws:iam::303767777435:role/my-test-role
+role_arn = arn:aws:iam::3XXXXXXXXXX:role/my-test-role
 ```
 추가 설정 profile로 명령어 실행
 ```
